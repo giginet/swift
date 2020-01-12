@@ -46,7 +46,7 @@
     "default-branch-scheme": "waiwai",
     "branch-schemes": {
        "waiwai": {
-            "aliases": ["master", "swift-5.1-branch", "waiwai-base"],
+            "aliases": ["waiwai", "master", "swift-5.1-branch", "waiwai-base"],
             "repos": {
                 "llvm-project": "swift/swift-5.1-branch",
                 "swift": "waiwai-base",
