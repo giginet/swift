@@ -46,25 +46,24 @@
     "default-branch-scheme": "master",
     "branch-schemes": {
        "master": {
-            "aliases": ["master", "swift/master", "waiwai-base"],
+            "aliases": ["master", "swift-5.1-branch", "waiwai-base"],
             "repos": {
-                "llvm-project": "swift/master",
+                "llvm-project": "swift/swift-5.1-branch",
                 "swift": "waiwai-base",
                 "cmark": "master",
-                "llbuild": "master",
-                "swiftpm": "master",
-                "swift-syntax": "master",
-                "swift-stress-tester": "master",
-                "swift-corelibs-xctest": "master",
-                "swift-corelibs-foundation": "master",
-                "swift-corelibs-libdispatch": "master",
-                "swift-integration-tests": "master",
-                "swift-xcode-playground-support": "master",
+                "llbuild": "swift-5.1-branch",
+                "swiftpm": "swift-5.1-branch",
+                "swift-syntax": "swift-5.1-branch",
+                "swift-stress-tester": "swift-5.1-branch",
+                "swift-corelibs-xctest": "swift-5.1-branch",
+                "swift-corelibs-foundation": "swift-5.1-branch",
+                "swift-corelibs-libdispatch": "swift-5.1-branch",
+                "swift-integration-tests": "swift-5.1-branch",
+                "swift-xcode-playground-support": "swift-5.1-branch",
                 "ninja": "release",
                 "icu": "release-61-1",
-                "cmake": "v3.15.1",
-                "indexstore-db": "master",
-                "sourcekit-lsp": "master"
+                "indexstore-db": "swift-5.1-branch",
+                "sourcekit-lsp": "swift-5.1-branch"
             }
         },
         "next" : {
@@ -209,27 +208,6 @@
                 "icu": "release-61-1",
                 "indexstore-db": "master",
                 "sourcekit-lsp": "master"
-            }
-        },
-       "swift-5.1-branch" : {
-            "aliases": ["swift-5.1-branch", "swift/swift-5.1-branch"],
-            "repos": {
-                "llvm-project": "swift/swift-5.1-branch",
-                "swift": "swift-5.1-branch",
-                "cmark": "master",
-                "llbuild": "swift-5.1-branch",
-                "swiftpm": "swift-5.1-branch",
-                "swift-syntax": "swift-5.1-branch",
-                "swift-stress-tester": "swift-5.1-branch",
-                "swift-corelibs-xctest": "swift-5.1-branch",
-                "swift-corelibs-foundation": "swift-5.1-branch",
-                "swift-corelibs-libdispatch": "swift-5.1-branch",
-                "swift-integration-tests": "swift-5.1-branch",
-                "swift-xcode-playground-support": "swift-5.1-branch",
-                "ninja": "release",
-                "icu": "release-61-1",
-                "indexstore-db": "swift-5.1-branch",
-                "sourcekit-lsp": "swift-5.1-branch"
             }
         }
     }
