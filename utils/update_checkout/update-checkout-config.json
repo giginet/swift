@@ -46,10 +46,10 @@
     "default-branch-scheme": "master",
     "branch-schemes": {
        "master": {
-            "aliases": ["master", "swift/master"],
+            "aliases": ["master", "swift/master", "waiwai-base"],
             "repos": {
                 "llvm-project": "swift/master",
-                "swift": "master",
+                "swift": "waiwai-base",
                 "cmark": "master",
                 "llbuild": "master",
                 "swiftpm": "master",
