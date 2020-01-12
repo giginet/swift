@@ -36,4 +36,5 @@ silopt_register_sources(
   SpeculativeDevirtualizer.cpp
   StackPromotion.cpp
   UnsafeGuaranteedPeephole.cpp
+  WaiWaiOptimizer.cpp
 )

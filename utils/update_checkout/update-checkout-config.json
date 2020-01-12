@@ -3,7 +3,7 @@
     "https-clone-pattern": "https://github.com/%s.git",
     "repos" : {
        "swift": {
-            "remote": { "id": "apple/swift" } },
+            "remote": { "id": "freddi-kit/waiwai-swiftc-silopt-workshop" } },
        "cmark": {
             "remote": { "id": "apple/swift-cmark" } },
         "llbuild": {
