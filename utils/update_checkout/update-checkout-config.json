@@ -31,8 +31,7 @@
             "platforms": [ "Linux" ]
         },
         "cmake": {
-            "remote": { "id": "KitWare/CMake" },
-            "platforms": [ "Linux" ]
+            "remote": { "id": "KitWare/CMake" }
         },
        "indexstore-db": {
             "remote": { "id": "apple/indexstore-db" } },
