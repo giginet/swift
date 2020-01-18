@@ -62,6 +62,7 @@
                 "swift-xcode-playground-support": "swift-5.1-branch",
                 "ninja": "release",
                 "icu": "release-61-1",
+                "cmake": "v3.15.1",
                 "indexstore-db": "swift-5.1-branch",
                 "sourcekit-lsp": "swift-5.1-branch"
             }
