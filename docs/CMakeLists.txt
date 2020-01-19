@@ -14,15 +14,15 @@ SET(SPHINX_ARGS
   -D latex_elements.papersize=${SWIFT_SPHINX_PAPER_SIZE}
   -d ${CMAKE_BINARY_DIR}/doctrees)
 
-if(SPHINX_EXECUTABLE)
-  add_custom_target(docs_html ALL
-    ${SPHINX_EXECUTABLE} ${SPHINX_ARGS} -b html
-      . ${CMAKE_BINARY_DIR}/docs/html
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    COMMENT "Building HTML documentation")
-else()
-  message(WARNING "Unable to find sphinx-build program. Not building docs")
-endif()
+# if(SPHINX_EXECUTABLE)
+#   add_custom_target(docs_html ALL
+#     ${SPHINX_EXECUTABLE} ${SPHINX_ARGS} -b html
+#       . ${CMAKE_BINARY_DIR}/docs/html
+#     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#     COMMENT "Building HTML documentation")
+# else()
+#   message(WARNING "Unable to find sphinx-build program. Not building docs")
+# endif()
 
 if (LLVM_ENABLE_DOXYGEN)
 if (DOXYGEN_FOUND)
