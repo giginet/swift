@@ -11,9 +11,11 @@ using namespace swift;
 using namespace std;
 
 namespace {
-class WaiWaiOptimizer : public swift::SILFunctionTransform {
+class WaiWaiOptimizer : public SILFunctionTransform {
   /// The entry point to the transformation.
   void run() override {
+    // [No.1]: Assume Single Threadedを書く
+    // Hint: Referenceカウンタを操作するInstructionをすべてnon atomicにする
   }
 };
 }
