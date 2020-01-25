@@ -15,20 +15,20 @@ class WaiWaiOptimizer : public swift::SILFunctionTransform {
   /// The entry point to the transformation.
 private:
     
-  // DO NOT Change: 変更しないでください
-  // やること: 後片付け
+  // [No.2]: minDCEを書く（必要であれば実装します） 
+  // やること: 後片付け。次のFunctionのminDCEを回すときに残ってまずいものは、ここでどうにかしておくこと
+  // 配列とか・・・？
   void onFinished() {
-    MarkAsUsefulInstSet.clear();
   }
 
   // [No.2]: minDCEを書く（関数を実装してください）      
   // やること: * UsefulなInsturctionの条件１を判定してMarkする　
-  //          - BBの中からReturn Instを探して、それをUsefulとしてMarkする (markedAsUsefulInstSetにinsert)
+  //          - BBの中からReturn Instを探して、それをUsefulとしてMarkする
   void checkReturnInstAndSetToLiveInst() {
   }
     
   // [No.2]: minDCEを書く（関数を実装してください） 
-  // やること: * UsefulなInsturctionの条件２を判定してMarkする (markedAsUsefulInstSetにinsert)     
+  // やること: * UsefulなInsturctionの条件２を判定してMarkする  
   //          - UsefulなInstructionのOperandをたどって、中にあるSILValueのInsructionをUsefulなものとしてMarkする
   //          - UsefulなInstructionの `// user: ...` をたどって、それらをUsefulなものとしてMarkする
   // Hint1: すでにMarkしたものも十分に条件２で走査しましょう。再帰をつかうとすっきりします。
