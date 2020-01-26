@@ -1,0 +1,39 @@
+sil_stage raw
+
+import Builtin
+import Swift
+import SwiftShims
+
+func value() -> Int
+
+// main
+sil [ossa] @main : $@convention(c) (Int32, UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>) -> Int32 {
+bb0(%0 : $Int32, %1 : $UnsafeMutablePointer<Optional<UnsafeMutablePointer<Int8>>>):
+  %2 = integer_literal $Builtin.Int32, 0          // user: %3
+  %3 = struct $Int32 (%2 : $Builtin.Int32)        // user: %4
+  return %3 : $Int32                              // id: %4
+} // end sil function 'main'
+
+// value()
+sil hidden [ossa] @$s5neko25valueSiyF : $@convention(thin) () -> Int {
+bb0:
+  %0 = alloc_box ${ var Int }, var, name "a"      // users: %10, %1
+  %1 = project_box %0 : ${ var Int }, 0           // users: %7, %6
+  %2 = integer_literal $Builtin.IntLiteral, 10    // user: %5
+  %3 = metatype $@thin Int.Type                   // user: %5
+  // function_ref Int.init(_builtinIntegerLiteral:)
+  %4 = function_ref @$sSi22_builtinIntegerLiteralSiBI_tcfC : $@convention(method) (Builtin.IntLiteral, @thin Int.Type) -> Int // user: %5
+  %5 = apply %4(%2, %3) : $@convention(method) (Builtin.IntLiteral, @thin Int.Type) -> Int // user: %6
+  store %5 to [trivial] %1 : $*Int                // id: %6
+  %7 = begin_access [read] [unknown] %1 : $*Int   // users: %9, %8
+  %8 = load [trivial] %7 : $*Int                  // user: %11
+  end_access %7 : $*Int                           // id: %9
+  destroy_value %0 : ${ var Int }                 // id: %10
+  return %8 : $Int                                // id: %11
+} // end sil function '$s5neko25valueSiyF'
+
+// Int.init(_builtinIntegerLiteral:)
+sil [transparent] [serialized] @$sSi22_builtinIntegerLiteralSiBI_tcfC : $@convention(method) (Builtin.IntLiteral, @thin Int.Type) -> Int
+
+
+
