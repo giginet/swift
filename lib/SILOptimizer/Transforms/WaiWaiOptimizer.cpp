@@ -16,6 +16,15 @@ class WaiWaiOptimizer : public SILFunctionTransform {
   void run() override {
     // [No.1]: Assume Single Threadedを書く
     // Hint: Referenceカウンタを操作するInstructionをすべてnon atomicにする
+    auto currentFunction = getFunction();
+    for(auto &bb: *currentFunction) {
+      for(auto &i: bb) {
+          if(auto refCountingI = dyn_cast<RefCountingInst>(&i)) {
+              refCountingI->setNonAtomic();
+          }
+      }
+    }
+    invalidateAnalysis(SILAnalysis::InvalidationKind::Instructions);
   }
 };
 }
