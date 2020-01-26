@@ -116,6 +116,9 @@ public:
 
   /// Assume that code will be executed in a single-threaded environment.
   bool AssumeSingleThreaded = false;
+    
+  /// Enable waiwai
+  bool enableWaiwai = false;
 
   /// Indicates which sanitizer is turned on.
   OptionSet<SanitizerKind> Sanitizers;

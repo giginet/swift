@@ -12,7 +12,6 @@ using namespace std;
 
 namespace {
 class WaiWaiOptimizer : public swift::SILFunctionTransform {
-    /// The entry point to the transformation.
 private:
     SmallSetVector<SILInstruction*, 32> UsefulInstractions;
     // [No.2]: minDCEを書く（必要であれば実装します）
@@ -85,6 +84,7 @@ private:
     
 public:
     void run() override {
+        if (!getOptions().enableWaiwai) return;
         
         // BBが2つ以上ある or terminatorがreturnじゃないFunctionは無視
         // 資料にある問題２の実装です。

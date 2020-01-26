@@ -220,6 +220,7 @@ static void addCommonFrontendArgs(const ToolChain &TC, const OutputInfo &OI,
   inputArgs.AddLastArg(arguments, options::OPT_O_Group);
   inputArgs.AddLastArg(arguments, options::OPT_RemoveRuntimeAsserts);
   inputArgs.AddLastArg(arguments, options::OPT_AssumeSingleThreaded);
+  inputArgs.AddLastArg(arguments, options::OPT_EnableWaiwai);
   inputArgs.AddLastArg(arguments,
                        options::OPT_enable_experimental_dependencies);
   inputArgs.AddLastArg(arguments,

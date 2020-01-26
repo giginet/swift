@@ -91,7 +91,9 @@ static void addMandatoryOptPipeline(SILPassPipelinePlan &P) {
   P.addAccessEnforcementSelection();
 
   P.addAllocBoxToStack();
+  P.addWaiWaiOptimizer();
   P.addNoReturnFolding();
+  P.addWaiWaiOptimizer();
   addDefiniteInitialization(P);
   // Only run semantic arc opts if we are optimizing and if mandatory semantic
   // arc opts is explicitly enabled.
@@ -248,6 +250,8 @@ void addHighLevelLoopOptPasses(SILPassPipelinePlan &P) {
 void addSSAPasses(SILPassPipelinePlan &P, OptimizationLevelKind OpLevel) {
   // Promote box allocations to stack allocations.
   P.addAllocBoxToStack();
+    
+  P.addWaiWaiOptimizer();
 
   // Propagate copies through stack locations.  Should run after
   // box-to-stack promotion since it is limited to propagating through

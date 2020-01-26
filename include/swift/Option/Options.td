@@ -536,6 +536,10 @@ def AssumeSingleThreaded : Flag<["-"], "assume-single-threaded">,
   Flags<[FrontendOption, HelpHidden]>,
   HelpText<"Assume that code will be executed in a single-threaded "
            "environment">;
+def EnableWaiwai : Flag<["-"], "enable-waiwai">,
+Flags<[FrontendOption, HelpHidden]>,
+HelpText<"Enable Waiwai Optimizer "
+         "environment">;
 
 // Debug info options
 
